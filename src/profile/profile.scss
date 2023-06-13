@@ -1,0 +1,58 @@
+@import "../globals";
+.profilepage {
+  width: 500px;
+  height: 500px;
+  padding: 2rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  border-radius: 5px;
+  input {
+    height: 10px;
+    width: 60%;
+    background-color: rgb(231, 228, 228);
+    border: none;
+    padding-left: 1rem;
+    border-radius: 5px;
+    &:focus {
+      outline: none;
+    }
+  }
+  button {
+    font-size: 1rem;
+    padding: .5rem;
+    width: 80px;
+    height: 50px;
+    border: none;
+    background-color: $backgroundColor;
+    border-radius: 5px;
+
+    color: white;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .main-ava{
+    width: 150px;
+    height: 150px;
+  }
+  .left{
+    float: right
+  }
+  .list-ava{
+    width: 100px;
+    height:min-content;
+  }
+
+  .center {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    height: 50px;
+
+  }
+  
+}
+
+

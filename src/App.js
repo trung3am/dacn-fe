@@ -1,25 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+// import Home from "./home/home";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import "./App.scss";
+import React from "react";
+// import io from "socket.io-client";
+import { connect } from "react-redux";
+import Login from "./login/login";
+import SignUp from "./signup/signup";
+import Profile from "./profile/profile.js"
+import UploadAvatar from "./profile/uploadavatar";
+// import Footer from "./footer";
+import Changepassword from "./changepassword/changepassword";
+import Resetpassword from "./resetpassword/resetpassword";
+import Newpassword from "./newpassword/newpassword";
+
+
+// const socket = io.connect("https://trung-realtime-be.herokuapp.com");
+
+
+const  App = (props ) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/" exact render = {
+            () => (props.user && props.user.name) ? (<Redirect to='/profile'/>) : (<Login />)
+          }/>
+          <Route path="/login"  render = {
+            () => (props.user && props.user.name) ? (<Redirect to='/profile'/>) : (<Login />)
+          }/>
+          <Route path="/signup"  render = {
+            () => (props.user && props.user.name) ? (<Redirect to='/profile'/>) : (<SignUp />)
+          }/>
+          <Route path="/forgotpassword"  render = {
+            () => (props.user && props.user.name) ? (<Redirect to='/profile'/>) : (<Resetpassword />)
+          }/>
+          <Route path="/newpassword"  render = {
+            () => (props.user && props.user.name) ? (<Redirect to='/profile'/>) : (<Newpassword />)
+          }/>
+          <Route path={"/changepassword"} exact render = {
+            () => (props.user && props.user.name === null )? (<Redirect to="/"/>) : (<Changepassword/> )  
+          } />
+          <Route path={"/profile"} exact render = {
+            () => props.token === null ? (<Redirect to="/"/>) : (<Profile /> )
+          } />
+          <Route path={"/editavatar"} exact render = {
+            () => props.token === null ? (<Redirect to="/"/>) : (<UploadAvatar/> )
+          } />
+        </Switch>
+      </div>
+      {/* <footer>
+          <Footer/>
+        </footer> */}
+    </Router>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return{
+    user : state.user.user,
+    token: state.user.token
+  }
+}
+
+
+export default connect(mapStateToProps)(App);
