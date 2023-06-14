@@ -12,8 +12,8 @@ const NewPasswordPage = (props)=> {
   const [password, setpassword] = useState("");
   const [newpassword, setnewpassword] = useState("");
   let email = props.resetUser
-  let secret = new URLSearchParams(window.location.search);
-  secret = secret.get('key');
+  let secret = window.location.search.replace("?key=","");
+  
   const check = async () => {
 
     console.log(secret);
@@ -76,7 +76,7 @@ check();
       <button onClick={sendData}>Reset Password</button>
 
       <Link to='/signup'>Sign up</Link>
-      <Link to='/forgotpassword'>Forgot your password ?</Link>
+      
     </div>
   );
 }

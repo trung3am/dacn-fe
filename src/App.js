@@ -1,5 +1,5 @@
 
-// import Home from "./home/home";
+import Home from "./home/home";
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import "./App.scss";
 import React from "react";
@@ -24,7 +24,7 @@ const  App = (props ) => {
       <div className="App">
         <Switch>
           <Route path="/" exact render = {
-            () => (props.user && props.user.name) ? (<Redirect to='/profile'/>) : (<Login />)
+            () => (props.user && props.user.name) ? (<Home/>) : (<Redirect to='/login'/>)
           }/>
           <Route path="/login"  render = {
             () => (props.user && props.user.name) ? (<Redirect to='/profile'/>) : (<Login />)

@@ -3,36 +3,12 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logOut, setFromChat, updateCurrentRoom, updateUser } from "../store/action";
 
-// import { useState } from "react";
-// import UpLoadPictureApi from "../api/uploadpictureApi";
-// import GetUserProfileApi from "../api/getuserprofileApi";
 
-// import { serverUrl } from '../api/link';
 const ProfilePage = (props)=> {
-  // const [file, setfile] = useState(null)
+
   const username = props.user.name
   
 
-
-  // const uploadPhoto = async () => {
-  //   if (file===null) {
-  //     alert("please select picture for upload")
-  //     return
-  //   }
-  //   if (!file[0].name.match(/\.(jpg|png|jpeg)$/)) {
-  //     alert("Please upload png/jpg/jpeg file")
-  //     return
-  //   }
-  //   const res = await UpLoadPictureApi(file,props.token)
-  //   if (res && res.status === 201) {
-      
-  //     const userProfile = await GetUserProfileApi(props.token)
-  //     alert("upload complete")
-  //     props.updateUser(userProfile.data)
-  //     return 
-  //   }
-  //   alert("failed to upload new picture")
-  // }
 
   const handleLogout = async () => {
 
