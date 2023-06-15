@@ -18,7 +18,7 @@ const Homepage = (props) => {
   return (
     <div className="dashboard">
       <div className="header">
-        <div style={{width:"100rem"}}><h1>
+        <div style={{width:"65rem"}}><h1>
           <span style={{ color: "Violet" }}>Time </span><span >Table</span>
           
         </h1></div>
@@ -31,9 +31,9 @@ const Homepage = (props) => {
           <button ><b>📈 Analytics</b></button>
           <button ><b>📆 Calendar</b></button>
           <button ><b>📡 Task Location</b></button>
-          <div style={{marginTop:"33rem" ,display:"flex"}}>
+          <div style={{marginTop:"15rem" ,display:"flex"}}>
           <img src={require('../profile/user-img.jpg')} alt="asd" height={"40rem"} margin="0"></img>
-          <h3 style={{marginLeft:".1rem", marginTop:".5rem",width:"60rem"}} ><b>{username}</b></h3>
+          <h4 style={{marginLeft:".1rem", marginTop:".7rem",width:"10rem" , fontSize:".7rem"}} ><b>{username}</b></h4>
           </div>
         </div>
         <div className="right">
@@ -47,7 +47,7 @@ const Homepage = (props) => {
             <div style={{backgroundColor:"#89E894", borderRadius:"25px", margin:"auto", width:"17rem" ,height:"100%" }}>
               <h2 style={{margin:"1rem 1rem 1rem 7rem"}}><b>9:00-10:00</b></h2>
             </div>
-            <div style={{backgroundColor:"#89E894", borderRadius:"25px", margin:"auto", width:"30rem" ,height:"100%" }}>
+            <div style={{backgroundColor:"#89E894", borderRadius:"25px", margin:"auto", width:"25rem" ,height:"100%" }}>
               <h3 style={{margin:"1rem 0rem 0rem 3rem"}}><b>Coffee with Dove</b></h3>
               <p style={{margin:"0rem 0rem 0rem 3rem", color:"gray"}}>To do list to do list...</p>
             </div>
@@ -59,16 +59,16 @@ const Homepage = (props) => {
             <div style={{backgroundColor:"#89E894", borderRadius:"25px", margin:"auto", width:"17rem" ,height:"100%" }}>
               <h2 style={{margin:"1rem 1rem 1rem 7rem"}}><b>14:00-15:30</b></h2>
             </div>
-            <div style={{backgroundColor:"#89E894", borderRadius:"25px", margin:"auto", width:"30rem" ,height:"100%" }}>
+            <div style={{backgroundColor:"#89E894", borderRadius:"25px", margin:"auto", width:"25rem" ,height:"100%" }}>
               <h3 style={{margin:"1rem 0rem 0rem 3rem"}}><b>Meeting with PIP Department</b></h3>
               <p style={{margin:"0rem 0rem 0rem 3rem", color:"gray"}}>To do list to do list...</p>
             </div>
             </div>
             </div>
-            <div style={{padding:"1rem", marginTop:"18rem"}}>
+            <div style={{padding:"1rem", marginTop:"6rem"}}>
             <div className="myDIV">
 
-            <input style={{width:"70rem"}} placeholder="🔍 Search"></input>
+            <input style={{width:"45rem"}} placeholder="🔍 Search"></input>
             </div>
             </div>
             
